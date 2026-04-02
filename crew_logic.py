@@ -49,9 +49,26 @@ def run_analysis_crew(company_name):
         agent=researcher
     )
 
-    report_task = Task(
-        description='Review the raw research. Format it into a highly professional executive briefing in Markdown format with headings: Executive Summary, Key Developments, Market Sentiment, and Risks.',
-        expected_output='A polished markdown report.',
+   report_task = Task(
+        description=f'''Review the raw research for {company_name}. 
+        You MUST output your final analysis strictly as a raw JSON object. Do not include markdown formatting blocks (like ```json).
+        
+        You must adhere to this exact schema:
+        {{
+            "company_name": "{company_name}",
+            "overall_sentiment_score": <an integer between 0 and 100 based on the news>,
+            "sentiment_label": "<Bullish, Bearish, or Neutral>",
+            "key_metrics": {{
+                "<Metric Name 1 (e.g., Stock Trend)>": "<Value>",
+                "<Metric Name 2 (e.g., Market Risk)>": "<Value>",
+                "<Metric Name 3 (e.g., Competitor Threat)>": "<Value>"
+            }},
+            "critical_news": [
+                {{"headline": "...", "impact_level": "High/Medium/Low"}}
+            ],
+            "executive_summary": "<A detailed 2-paragraph markdown summary of the situation>"
+        }}''',
+        expected_output='A strict JSON object containing the financial analysis.',
         agent=analyst
     )
 
