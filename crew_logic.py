@@ -15,7 +15,7 @@ def search_tool(search_query: str) -> str:
 
 # 3. Initialize the Gemini LLM
 gemini_llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash", 
+    model="gemini-2.5-flash", # CHANGED: 1.5 is retired, 2.5 is the current active model
     google_api_key=os.environ.get("GEMINI_API_KEY")
 )
 
