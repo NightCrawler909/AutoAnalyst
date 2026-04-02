@@ -1,5 +1,7 @@
 streamlit
-crewai
-tavily-python
+pydantic>=2.0.0
 langchain-google-genai
+langchain-community
+tavily-python
+crewai
 python-dotenv
