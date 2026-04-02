@@ -5,3 +5,5 @@ langchain-community
 tavily-python
 crewai
 python-dotenv
+plotly
+pandas
