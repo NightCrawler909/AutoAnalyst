@@ -1,3 +1,5 @@
+streamlit
 crewai
+tavily-python
 langchain-google-genai
 python-dotenv
