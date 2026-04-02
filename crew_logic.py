@@ -4,7 +4,7 @@ from crewai.tools import tool # NEW: Import the CrewAI tool decorator
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_google_genai import ChatGoogleGenerativeAI 
 
-# 1. Initialize the raw LangChain tool
+# 1. Initialize the raw LangChain tools
 tavily_raw = TavilySearchResults(max_results=3)
 
 # 2. NEW: Wrap it in a CrewAI native tool to bypass the Pydantic error
