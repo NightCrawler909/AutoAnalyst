@@ -49,7 +49,7 @@ def run_analysis_crew(company_name):
         agent=researcher
     )
 
-   report_task = Task(
+    report_task = Task(
         description=f'''Review the raw research for {company_name}. 
         You MUST output your final analysis strictly as a raw JSON object. Do not include markdown formatting blocks (like ```json).
         
